@@ -96,7 +96,7 @@
                                 foreach ($memberships as $paket) : ?>
                                     <tr class="border-b border-gray-200 dark:border-gray-700">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                                            <button type="button" data-modal-target="edit<?= $paket['id'] ?>" data-modal-toggle="edit<?= $paket['id'] ?>" class="text-blue-700 hover:text-pink-500"><?= $paket['jangka_waktu'] ?> <i class="fa fa-pencil"></i></button>
+                                            <button type="button" data-modal-target="edit<?= $paket['id'] ?>" data-modal-toggle="edit<?= $paket['id'] ?>" class="text-blue-700 hover:text-pink-500"><?= $paket['jangka_waktu'] ?> Bulan <i class="fa fa-pencil"></i></button>
                                         </th>
                                         <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                                             Rp.<?= $paket['biaya_bulanan'] ?>/bln
@@ -133,8 +133,8 @@
                                                 <form action="/pricing/update/<?= $paket['id'] ?>" method="post">
                                                     <div class="p-4 md:p-5">
                                                         <div class="mb-5">
-                                                            <label for="jangka_waktu<?= $paket['id'] ?>" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">jangka_waktu</label>
-                                                            <input type="text" id="jangka_waktu<?= $paket['id'] ?>" name="jangka_waktu" value="<?= $paket['jangka_waktu'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                                            <label for="jangka_waktu<?= $paket['id'] ?>" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">jangka waktu (bulan)</label>
+                                                            <input type="number" min="1" id="jangka_waktu<?= $paket['id'] ?>" name="jangka_waktu" value="<?= $paket['jangka_waktu'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                                         </div>
                                                         <div class="mb-5">
                                                             <label for="biaya_bulanan<?= $paket['id'] ?>" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Biaya Bulanan</label>
@@ -146,7 +146,7 @@
                                                         </div>
                                                         <div class="mb-5">
                                                             <label for="keunggulan<?= $paket['id'] ?>" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keunggulan</label>
-                                                            <input type="text" id="keunggulan<?= $paket['id'] ?>" name="keunggulan" value="<?= $paket['keunggulan'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                                            <input type="number" min="0" id="keunggulan<?= $paket['id'] ?>" name="keunggulan" value="<?= $paket['keunggulan'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                                         </div>
 
 
@@ -195,8 +195,8 @@
                 <form class="space-y-4" action="/pricing/add" method="post">
 
                     <div>
-                        <label for="jangka_waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jangka Waktu</label>
-                        <input type="text" name="jangka_waktu" id="jangka_waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                        <label for="jangka_waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jangka Waktu (Bulan)</label>
+                        <input type="number" name="jangka_waktu" id="jangka_waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                     </div>
                     <div>
                         <label for="biaya_bulanan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Biaya Bulanan</label>
@@ -208,7 +208,7 @@
                     </div>
                     <div>
                         <label for="keunggulan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keunggulan</label>
-                        <input type="text" name="keunggulan" id="keunggulan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+                        <input type="number" min="0" name="keunggulan" id="keunggulan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
                     </div>
 
 

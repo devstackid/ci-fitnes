@@ -15,7 +15,7 @@
         <div class="lg:border-r p-4 bg-yellow-300">
             <span class="text-sm font-bold text-black">Deskripsi Paket</span>
             <div class="mt-2 p-4 bg-white/25 backdrop-blur-sm rounded-lg shadow sm:p-8 ">
-                <h5 class="mb-2 text-3xl font-bold text-black lg:w-auto w-[150px]"><?= $paket['jangka_waktu'] ?> </h5>
+                <h5 class="mb-2 text-3xl font-bold text-black lg:w-auto w-[150px]"><?= $paket['jangka_waktu'] ?> Bulan </h5>
                 <span class="block text-sm font-normal text-slate-600">Rp. <span class="text-black font-medium"><?= $paket['biaya_bulanan'] ?></span> /bulan</span>
                 <ul role="list" class="space-y-5 my-7 border-t border-black py-3">
                     <li class="flex items-center max-w-[250px]">

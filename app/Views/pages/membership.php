@@ -33,7 +33,7 @@
 
     <?php foreach ($memberships as $paket) : ?>
         <div class="p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 ">
-            <h5 class="mb-2 text-3xl font-bold text-teal-400 lg:w-auto w-[150px]"><?= $paket['jangka_waktu'] ?> </h5>
+            <h5 class="mb-2 text-3xl font-bold text-teal-400 lg:w-auto w-[150px]"><?= $paket['jangka_waktu'] ?> Bulan</h5>
             <span class="block text-sm font-normal text-slate-600">Rp. <span class="text-black font-medium"><?= $paket['biaya_bulanan'] ?></span> /bulan</span>
             <ul role="list" class="space-y-5 my-7 border-t py-3">
                 <li class="flex items-center max-w-[250px]">
